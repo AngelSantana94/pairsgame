@@ -11,7 +11,7 @@ class Card{
         this.element = document.createElement("div");
         this.element.classList.add("card");
         this.imgElement = document.createElement("img");
-        this.imgElement.src = `./public/img-backside.jpeg`;
+        this.imgElement.src = `./img-backside.jpeg`;
         this.imgElement.classList.add("card-img");
 
         this.element.appendChild(this.imgElement)
@@ -33,7 +33,7 @@ class Card{
 
     hide(){
         this.isFlipped = false;
-        this.imgElement.src = `./public/img-backside.jpeg`;
+        this.imgElement.src = `./img-backside.jpeg`;
 
     }
 

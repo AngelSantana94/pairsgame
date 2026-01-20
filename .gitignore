@@ -1,4 +1,14 @@
-# Logs
+# --- Dependencias ---
+node_modules/
+.pnp
+.pnp.js
+
+# --- Build / Producción ---
+dist/
+dist-ssr/
+*.local
+
+# --- Logs ---
 logs
 *.log
 npm-debug.log*
@@ -7,16 +17,26 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-
-
-# Editor directories and files
+# --- Editor / IDE ---
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# --- Herramientas de Estilo (Sass/CSS) ---
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# --- Otros ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

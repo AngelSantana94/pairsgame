@@ -17,6 +17,15 @@ class Game{
         this.finalResult = 0;
         this.timeLeft = 0;
         this.timerInterval = null;
+        this.audioJuego = new Audio('/sound/musica-fondo.mp3');
+        this.audioTecla = new Audio('/sound/tecla.mp3');
+        this.audioVoltear = new Audio('/sound/voltear.mp3');
+
+        // Configuración extra
+        this.audioJuego.loop = true;
+        this.audioJuego.volume = 0.1;
+        this.audioTecla.volume = 0.7;
+        this.audioVoltear.volume = 1.0;
 
         this.uiTime = document.querySelector("#time");
         this.uiResult = document.querySelector("#result");
@@ -28,22 +37,28 @@ class Game{
 
         this.buttonRestart = document.querySelector("#restart")
         this.buttonRestart.addEventListener("click", ()=>{
+            this.audioTecla.play();
             this.restartGame();
         })
         
 
         this.buttonStart = document.querySelector("#start");
         this.buttonStart.addEventListener("click", ()=>{
+            this.audioTecla.play();
             this.startGame()
         })
         
         this.buttonExit = document.querySelector("#exit");
         this.buttonExit.addEventListener("click",()=>{
+            this.audioTecla.play();
+            this.audioJuego.pause(); 
+            this.audioJuego.currentTime = 0;
             this.exit()
         })
 
         this.buttonContinue = document.querySelector("#continue")
         this.buttonContinue.addEventListener("click",()=>{
+            this.audioTecla.play();
             this.startGame()
         })
 
@@ -84,6 +99,7 @@ class Game{
     }
 
     startGame(){
+        this.audioJuego.play().catch(e => console.log("Esperando interacción"));
         if (this.timerInterval) {
             clearInterval(this.timerInterval);
             this.timerInterval = null; 
@@ -135,13 +151,15 @@ class Game{
         let arrRandomComplet = arrCardsRandom(arrRandomConcat)
         
         for(let id of arrRandomComplet){
-            let imagePath =`./public/img0${id}.jpeg`;
+            let imagePath =`./img0${id}.jpeg`;
             let card = new Card(id,imagePath, this);
             this.board.addCard(card.element);
         }
     }
 
     checkSelection(card){
+        this.audioVoltear.currentTime = 0;
+        this.audioVoltear.play();
         this.startTimer();
         
         if(this.firstCard === null){
@@ -222,7 +240,6 @@ class Game{
             console.log("¡Nivel Completado!");
             clearInterval(this.timerInterval)
             setTimeout(() =>{
-                alert(`!Felicidades! Nivel ${this.level} superado.`);
                 this.level ++
                 localStorage.setItem("savedLevel", this.level);
                 console.log(this.level)

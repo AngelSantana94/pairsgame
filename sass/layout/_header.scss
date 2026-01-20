@@ -1,3 +1,24 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+#header{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 50px;
+    margin-left: 0;
+    font-size: 32px;
+    margin-right: 25px;    
+}
+
+h1{
+    color: rgb(203, 57, 16);
+    font-size: 120px; /* Tamaño para PC */
+    margin-top: 200px;
+    margin-bottom: 20px;
+    padding: 0;
+    text-align: center; /* Fuerza el centrado del texto */
+    width: 100%;       /* Asegura que ocupe todo el ancho para centrar */
+    
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
