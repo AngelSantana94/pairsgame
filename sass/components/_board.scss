@@ -1,0 +1,15 @@
+#board {
+    display: grid;
+    justify-items: center; 
+    align-items: center;
+}
+#card-container{
+    display: grid;
+    width: fit-content; 
+    max-width: 90vw;
+    margin: 80px auto 0 auto; 
+    gap: 10px;
+    justify-items: center; 
+    align-items: center;
+
+}
