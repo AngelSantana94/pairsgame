@@ -17,9 +17,9 @@ class Game{
         this.finalResult = 0;
         this.timeLeft = 0;
         this.timerInterval = null;
-        this.audioJuego = new Audio('/sound/musica-fondo.mp3');
-        this.audioTecla = new Audio('/sound/tecla.mp3');
-        this.audioVoltear = new Audio('/sound/voltear.mp3');
+        this.audioJuego = new Audio('sound/musica-fondo.mp3');
+        this.audioTecla = new Audio('sound/tecla.mp3');
+        this.audioVoltear = new Audio('sound/voltear.mp3');
 
         // Configuración extra
         this.audioJuego.loop = true;
