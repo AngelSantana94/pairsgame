@@ -1,4 +1,4 @@
-import './style.css'
+//import './style.css'
 //import "../sass/main.scss"
 import { Game } from "./class/game"
 
